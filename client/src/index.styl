@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
+
+*,*::before, *::after
+    padding 0
+    margin 0
+    box-sizing border-box
+    
+h1,h2,h3,h4,h5,p,span, label, a
+    font-family 'Montserrat', Arial, Helvetica, sans-serif 
+
+h1,h2,h3,h4,h5
+    font-weight 800
+
+p,span, label, a
+    font-weight 400
+
+
+.form-control
+    width 100% !important
+
+
+// Animations
+.triple-spinner 
+  display block
+  position fixed
+  bottom -70px
+  right -100px
+  width 300px
+  height 300px
+  z-index -10
+  border-radius 50%
+  border 20px solid transparent
+  border-top 20px solid #222
+  animation spin 6s linear infinite
+  overflow hidden
+
+
+.triple-spinner::before,
+.triple-spinner::after 
+  content ""
+  position absolute
+  border-radius 50%
+  border 20px solid transparent
+  overflow hidden
+
+.triple-spinner::before 
+  top 5px
+  left 5px
+  right 5px
+  bottom 5px
+  border-top-color #444
+  animation spin 4s linear infinite 
+
+.triple-spinner::after 
+  top 15px
+  left 15px
+  right 15px
+  bottom 15px
+  border-top-color #777;
+  animation spin 8s linear infinite;
+
+
+
+
+
+  
+
+@keyframes spin 
+    from 
+      -webkit-transform rotate(0deg)
+      transform rotate(0deg) 
+    to 
+      -webkit-transform rotate(360deg)
+      transform rotate(360deg)

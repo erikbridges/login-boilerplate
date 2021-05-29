@@ -1,0 +1,60 @@
+@import "../../../mixins.styl"
+
+.login
+    centerFlex()
+    text-align center
+
+.login-form
+    boxColorTheme()
+    padding 70px
+    display inline-block
+    margin 70px auto
+    width 40%
+
+.login-title
+    font-size rfs(25px)
+    padding 10px
+
+.login-wrapper
+    margin-bottom 20px
+    width 100%
+    display block 
+
+.login-wrapper label
+    display block
+    text-align left
+    font-size rfs(14px)
+
+.login-wrapper input 
+    padding 10px
+    margin 5px
+    border none
+    border-radius 5px
+
+
+.login-wrapper input
+    width 100%
+    display block
+
+.login-buttons
+    margin-top 30px 
+    display flex
+    justify-content space-around
+    align-items center
+    flex-wrap wrap
+
+#btn-style
+    buttonsColorTheme()
+
+.login-buttons a
+    underlineLinkTheme()
+
+   
+
+@media screen and (max-width 968px)
+    .login-form
+        width 80%
+    
+    .login-buttons anth-child(1)
+        width 100%
+        margin 20px

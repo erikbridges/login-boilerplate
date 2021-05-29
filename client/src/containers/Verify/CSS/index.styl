@@ -1,0 +1,48 @@
+@import "../../../mixins.styl";
+
+.verify 
+  centerFlex()
+
+
+.verify-box
+    boxColorTheme()
+    margin 100px auto
+    padding 30px
+    width 40%
+
+.verify-info
+    padding-bottom 15px
+
+.verify-info h1 
+    font-size rfs(40px)
+
+.verify-info p
+    font-size rfs(14px)
+    margin 10px auto
+
+.verify-input
+    margin 10px
+
+.verify-input input 
+    display block
+    width 100%
+    border none 
+    padding 10px
+    border-radius 5px
+
+.verify-buttons
+    display flex
+    justify-content space-around
+    align-items center
+    margin 20px
+    a 
+      underlineLinkTheme()
+
+#btn-theme
+    buttonsColorTheme()
+
+
+@media screen and (max-width 968px)
+    .verify-box
+        width 80%
+    

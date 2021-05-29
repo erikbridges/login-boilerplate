@@ -1,0 +1,66 @@
+@import "../../../mixins.styl";
+
+.register
+    centerFlex()
+   
+
+.register-box
+    boxColorTheme()
+    margin 50px auto
+    padding 40px
+    width 40%
+    display inline-block
+
+.register-dialog 
+    padding 10px
+
+
+.register-dialog h2
+     font-size rfs(30px)
+
+.register-dialog p 
+    font-size rfs(14px)
+
+.register-input-wrap
+    margin 10px
+
+.register-input-wrap input
+    padding 10px
+    margin 5px
+    border none
+    border-radius 5px
+    display block
+    width 100%
+    
+
+.register-input-wrap label 
+    display block
+    text-align left
+    font-size rfs(14px)
+    margin-bottom 5px
+
+
+.register-input-wrap label
+    display block
+
+.register-btn-wrap
+    display flex
+    flex-wrap wrap 
+    justify-content space-around
+    align-items center
+    margin 20px
+
+.register-btn-wrap a:nth-child(1)
+    buttonsColorTheme()
+
+.register-btn-wrap a
+    underlineLinkTheme()
+    margin-top 10px
+
+
+@media screen and (max-width 968px)
+    .register-box
+        width 80%
+   
+    .register-btn-wrap a:nth-child(1)
+        width 100%
