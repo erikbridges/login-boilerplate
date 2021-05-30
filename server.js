@@ -2,6 +2,7 @@
 const fastify = require('fastify')({
     logger: true
   })
+const helmet = require("fastify-helmet");
 
 // DOT ENV and PORT Configuration
 require('dotenv').config();
@@ -25,6 +26,10 @@ const PORT = process.env.PORT || 5000
 // Configuration
 fastify.register(require("fastify-cors"));
 fastify.register(require("fastify-auth"));
+fastify.register(
+  helmet,
+  { contentSecurityPolicy: false }
+)
 fastify.register(require("./middleware/auth"));
 fastify.register(require("./routes/routes.js"), { prefix: "/api" });
 

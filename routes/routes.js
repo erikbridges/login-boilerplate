@@ -3,10 +3,8 @@ const registerUser = require("./controllers/Register");
 const LoginUser = require("./controllers/SignIn");
 const getUser = require("./controllers/GetUser");
 const authTest = require("./controllers/AuthTest");
-
-
-// Middleware
-const auth = require("../middleware/auth");
+const updateUser = require("./controllers/UpdateUser");
+const deleteUser = require("./controllers/DeleteUser");
 
 async function routes (fastify, options) {
 
@@ -28,7 +26,7 @@ async function routes (fastify, options) {
       })
     
     // Login User
-      fastify.post("/sign-in", async (req, reply) => LoginUser(req, reply))
+    fastify.post("/sign-in", async (req, reply) => LoginUser(req, reply))
 
     // Get User By Id
     fastify.route({
@@ -39,7 +37,27 @@ async function routes (fastify, options) {
       ]),
       handler: (req, reply) => getUser(req, reply)
     })
-    // Delete User
+
+    // Update User by id
+    fastify.route({
+        method: 'PATCH',
+        url: '/user',
+        preHandler: fastify.auth([
+          fastify.verifyUserAndPassword
+        ]),
+        handler: (req, reply) => updateUser(req, reply)
+    })
+    
+
+    // Delete User by id
+    fastify.route({
+      method: 'DELETE',
+      url: '/user',
+      preHandler: fastify.auth([
+        fastify.verifyUserAndPassword
+      ]),
+      handler: (req, reply) => deleteUser(req, reply)
+    })
 
   }
   
